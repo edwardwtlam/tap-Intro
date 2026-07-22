@@ -46,7 +46,7 @@ export default function Login() {
       <div className="relative w-full max-w-sm">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <img src="/tap-intro-logo.png" alt="Tap-Intro Logo" className="w-10 h-10 object-contain" />
+            <img src="/tap-intro-logo.svg" alt="Tap-Intro Logo" className="w-10 h-10 object-contain" />
             <span className="text-xl font-bold text-white">Tap-Intro</span>
           </Link>
           <p className="text-gray-400 text-sm">Sign in to manage your NFC card</p>

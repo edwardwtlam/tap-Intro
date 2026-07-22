@@ -1,10 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {
-  User,
-  Briefcase,
-  Building2,
-  FileText,
   Mail,
   Phone,
   Link2,
@@ -22,9 +18,9 @@ import { supabase } from '../lib/supabase';
 import { ProfileRow, SocialLink } from '../types';
 
 const themeOptions = [
-  { name: 'Dark Blue', bg: 'bg-gray-950', accent: 'text-sky-400', border: 'border-sky-500' },
-  { name: 'Ocean', bg: 'bg-blue-950', accent: 'text-cyan-400', border: 'border-cyan-500' },
-  { name: 'Forest', bg: 'bg-green-950', accent: 'text-emerald-400', border: 'border-emerald-500' },
+  { name: 'dark', bg: 'bg-gray-950', accent: 'text-sky-400', border: 'border-sky-500' },
+  { name: 'light', bg: 'bg-white', accent: 'text-sky-600', border: 'border-sky-500' },
+  { name: 'gradient', bg: 'bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950', accent: 'text-purple-400', border: 'border-purple-500' },
 ];
 
 export default function Dashboard() {
@@ -34,10 +30,9 @@ export default function Dashboard() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const { user, logout } = useAuth();
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [formData, setFormData] = useState({
-    full_name: '',
+    name: '',
     title: '',
     company: '',
     bio: '',
@@ -45,8 +40,8 @@ export default function Dashboard() {
     phone: '',
     website: '',
     social_links: [] as SocialLink[],
-    theme: 'Dark Blue',
-    avatar_url: '',
+    theme: 'dark',
+    profile_image: '',
   });
 
   useEffect(() => {
@@ -68,7 +63,7 @@ export default function Dashboard() {
         if (data) {
           setProfile(data);
           setFormData({
-            full_name: data.full_name || '',
+            name: data.name || '',
             title: data.title || '',
             company: data.company || '',
             bio: data.bio || '',
@@ -76,14 +71,14 @@ export default function Dashboard() {
             phone: data.phone || '',
             website: data.website || '',
             social_links: data.social_links || [],
-            theme: data.theme || 'Dark Blue',
-            avatar_url: data.avatar_url || '',
+            theme: data.theme || 'dark',
+            profile_image: data.profile_image || '',
           });
         } else {
           const newCard = {
             user_id: user.id,
             card_url_id: `card-${Date.now()}`,
-            full_name: '',
+            name: '',
             title: '',
             company: '',
             bio: '',
@@ -91,8 +86,8 @@ export default function Dashboard() {
             phone: '',
             website: '',
             social_links: [],
-            theme: 'Dark Blue',
-            avatar_url: '',
+            theme: 'dark',
+            profile_image: '',
           };
 
           const { data: created, error: createError } = await supabase
@@ -129,7 +124,7 @@ export default function Dashboard() {
   const addSocialLink = () => {
     setFormData((prev) => ({
       ...prev,
-      social_links: [...prev.social_links, { platform: '', url: '' }],
+      social_links: [...prev.social_links, { platform: '', url: '', icon: '' }],
     }));
   };
 
@@ -150,7 +145,7 @@ export default function Dashboard() {
       const { error } = await supabase
         .from('profiles')
         .update({
-          full_name: formData.full_name,
+          name: formData.name,
           title: formData.title,
           company: formData.company,
           bio: formData.bio,
@@ -159,8 +154,7 @@ export default function Dashboard() {
           website: formData.website,
           social_links: formData.social_links,
           theme: formData.theme,
-          avatar_url: formData.avatar_url,
-          updated_at: new Date().toISOString(),
+          profile_image: formData.profile_image,
         })
         .eq('id', profile.id);
 
@@ -186,7 +180,7 @@ export default function Dashboard() {
       <header className="sticky top-0 z-10 bg-gray-950/80 backdrop-blur-xl border-b border-gray-800">
         <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/tap-intro-logo.png" alt="Tap-Intro Logo" className="w-8 h-8 object-contain" />
+            <img src="/tap-intro-logo.svg" alt="Tap-Intro Logo" className="w-8 h-8 object-contain" />
             <span className="text-sm font-bold text-white">Tap-Intro</span>
           </Link>
           <div className="flex items-center gap-3">
@@ -256,8 +250,8 @@ export default function Dashboard() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
                   <input
                     type="text"
-                    name="full_name"
-                    value={formData.full_name}
+                    name="name"
+                    value={formData.name}
                     onChange={handleInputChange}
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-sky-500"
                     placeholder="Your Full Name"

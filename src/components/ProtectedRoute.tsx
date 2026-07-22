@@ -10,7 +10,7 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
     return (
       <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center gap-4">
         <div className="flex flex-col items-center gap-3">
-          <img src="/tap-intro-logo.png" alt="Tap-Intro Logo" className="w-12 h-12 object-contain" />
+          <img src="/tap-intro-logo.svg" alt="Tap-Intro Logo" className="w-12 h-12 object-contain" />
           <Loader2 size={32} className="text-sky-400 animate-spin" />
         </div>
         <p className="text-gray-400 text-sm">Tap-Intro</p>

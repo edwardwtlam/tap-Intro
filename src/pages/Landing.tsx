@@ -27,7 +27,7 @@ export default function Landing() {
         <div className="relative max-w-5xl mx-auto px-4 pt-20 pb-24 text-center">
           <nav className="flex items-center justify-between mb-20">
             <div className="flex items-center gap-3">
-              <img src="/tap-intro-logo.png" alt="Tap-Intro Logo" className="w-10 h-10 object-contain" />
+              <img src="/tap-intro-logo.svg" alt="Tap-Intro Logo" className="w-10 h-10 object-contain" />
               <span className="text-lg font-bold text-white">Tap-Intro</span>
             </div>
             <Link
@@ -145,7 +145,7 @@ export default function Landing() {
       <footer className="border-t border-gray-800 py-8">
         <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <img src="/tap-intro-logo.png" alt="Tap-Intro Logo" className="w-7 h-7 object-contain" />
+            <img src="/tap-intro-logo.svg" alt="Tap-Intro Logo" className="w-7 h-7 object-contain" />
             <span className="text-sm font-semibold text-white">Tap-Intro</span>
           </div>
           <p className="text-xs text-gray-500">www.tap-intro.com</p>
