@@ -180,7 +180,7 @@ export default function Dashboard() {
       <header className="sticky top-0 z-10 bg-gray-950/80 backdrop-blur-xl border-b border-gray-800">
         <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/tapdex-logo.svg" alt="Tapdex Logo" className="w-8 h-8 object-contain" />
+            <img src="/tapdex-logo.svg" alt="Tapdex Logo" className="w-12 h-12 object-contain" />
             <span className="text-sm font-bold text-white">Tapdex</span>
           </Link>
           <div className="flex items-center gap-3">
