@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import PublicProfile from './pages/PublicProfile';
 import VCardPage from './pages/VCardPage';
 import ClaimPage from './pages/ClaimPage';
+import AdminPage from './pages/AdminPage';
 import OrderProcess from './pages/OrderProcess';
 
 function App() {
@@ -20,6 +21,14 @@ function App() {
           <Route path="/profile/:id" element={<PublicProfile />} />
           <Route path="/vcard/:id" element={<VCardPage />} />
           <Route path="/claim/:code" element={<ClaimPage />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminPage />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/dashboard"
             element={

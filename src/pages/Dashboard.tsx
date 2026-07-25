@@ -271,6 +271,13 @@ export default function Dashboard() {
                   </button>
                 ))}
               </div>
+
+              <Link
+                to="/admin"
+                className="block mt-6 pt-4 border-t border-gray-800 text-xs text-gray-600 hover:text-gray-400 transition-colors"
+              >
+                Admin
+              </Link>
             </div>
           </div>
 
