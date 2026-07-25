@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import PublicProfile from './pages/PublicProfile';
 import VCardPage from './pages/VCardPage';
+import ClaimPage from './pages/ClaimPage';
 import OrderProcess from './pages/OrderProcess';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/order" element={<OrderProcess />} />
           <Route path="/profile/:id" element={<PublicProfile />} />
           <Route path="/vcard/:id" element={<VCardPage />} />
+          <Route path="/claim/:code" element={<ClaimPage />} />
           <Route
             path="/dashboard"
             element={

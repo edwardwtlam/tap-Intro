@@ -12,6 +12,7 @@ import {
   Palette,
   Loader2,
   AlertCircle,
+  CreditCard,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../lib/supabase';
@@ -28,6 +29,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
+  const [cardLinked, setCardLinked] = useState(false);
   const navigate = useNavigate();
   const { user, logout } = useAuth();
 
@@ -108,6 +110,19 @@ export default function Dashboard() {
     };
 
     loadProfile();
+
+    // Check if user has claimed a card
+    const checkCard = async () => {
+      if (!user) return;
+      const { data } = await supabase
+        .from('activation_codes')
+        .select('code')
+        .eq('claimed_by', user.id)
+        .eq('status', 'claimed')
+        .maybeSingle();
+      setCardLinked(!!data);
+    };
+    checkCard();
   }, [user, navigate]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -216,6 +231,27 @@ export default function Dashboard() {
           {/* Sidebar */}
           <div className="md:col-span-1">
             <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 sticky top-20">
+              {/* Card Status */}
+              <div className="mb-6 pb-6 border-b border-gray-800">
+                <h3 className="text-sm font-semibold text-gray-400 mb-3 flex items-center gap-2">
+                  <CreditCard size={16} />
+                  Card Status
+                </h3>
+                {cardLinked ? (
+                  <div className="flex items-center gap-2 text-green-400 text-sm">
+                    <div className="w-2 h-2 rounded-full bg-green-400" />
+                    Activated
+                  </div>
+                ) : (
+                  <div className="text-amber-400 text-sm">
+                    <p className="mb-2">No card linked yet</p>
+                    <a href="/order" className="text-sky-400 hover:text-sky-300 text-xs transition-colors">
+                      Order a card →
+                    </a>
+                  </div>
+                )}
+              </div>
+
               <h3 className="text-sm font-semibold text-gray-400 mb-4 flex items-center gap-2">
                 <Palette size={16} />
                 Theme
