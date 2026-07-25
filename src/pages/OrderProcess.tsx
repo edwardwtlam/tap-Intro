@@ -6,7 +6,7 @@ export default function OrderProcess() {
     {
       number: 1,
       title: 'Order Online',
-      description: 'Browse and customize your Tap-Intro card. Select design, information, and features you want. Complete your order securely online.',
+      description: 'Browse and customize your Tapdex card. Select design, information, and features you want. Complete your order securely online.',
       icon: ShoppingCart,
     },
     {
@@ -40,8 +40,8 @@ export default function OrderProcess() {
           {/* Header Navigation */}
           <nav className="flex items-center justify-between mb-20">
             <Link to="/" className="flex items-center gap-2">
-              <img src="/tap-intro-logo.svg" alt="Tap-Intro Logo" className="w-9 h-9 object-contain" />
-              <span className="text-lg font-bold text-white">Tap-Intro</span>
+              <img src="/tapdex-logo.svg" alt="Tapdex Logo" className="w-9 h-9 object-contain" />
+              <span className="text-lg font-bold text-white">Tapdex</span>
             </Link>
             <Link
               to="/login"
@@ -56,7 +56,7 @@ export default function OrderProcess() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
               How to Get Your
               <br />
-              <span className="text-sky-400">Tap-Intro Card</span>
+              <span className="text-sky-400">Tapdex Card</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
               A simple 4-step process to get your NFC digital business card. Order online, we set it up, free shipping, and start connecting instantly.
@@ -130,7 +130,7 @@ export default function OrderProcess() {
                   },
                   {
                     title: 'Delivered',
-                    desc: 'Receive and activate your Tap-Intro card',
+                    desc: 'Receive and activate your Tapdex card',
                     time: 'Ready to Use',
                   },
                 ].map((item, idx) => (
@@ -196,7 +196,7 @@ export default function OrderProcess() {
           <div className="relative bg-gradient-to-r from-sky-500/20 to-cyan-500/20 border border-sky-500/50 rounded-2xl p-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
             <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-              Join thousands of professionals already using Tap-Intro to connect instantly and make lasting impressions.
+              Join thousands of professionals already using Tapdex to connect instantly and make lasting impressions.
             </p>
             <Link
               to="/login"
@@ -213,10 +213,10 @@ export default function OrderProcess() {
       <footer className="border-t border-gray-800 py-8">
         <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <img src="/tap-intro-logo.svg" alt="Tap-Intro Logo" className="w-7 h-7 object-contain" />
-            <span className="text-sm font-semibold text-white">Tap-Intro</span>
+            <img src="/tapdex-logo.svg" alt="Tapdex Logo" className="w-7 h-7 object-contain" />
+            <span className="text-sm font-semibold text-white">Tapdex</span>
           </div>
-          <p className="text-xs text-gray-500">www.tap-intro.com</p>
+          <p className="text-xs text-gray-500">www.tapdex.com</p>
         </div>
       </footer>
     </div>

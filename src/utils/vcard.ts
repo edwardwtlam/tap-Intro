@@ -4,7 +4,7 @@ export function generateVCard(profile: ProfileRow): string {
   const lines: string[] = [
     'BEGIN:VCARD',
     'VERSION:3.0',
-    'PRODID:-//Tap-Intro//NFC Digital Business Card//EN',
+    'PRODID:-//Tapdex//NFC Digital Business Card//EN',
   ];
 
   // Name: FN (full name) and N (structured: LastName;FirstName)
