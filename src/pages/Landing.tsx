@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Smartphone, Zap, ArrowRight } from 'lucide-react';
+import { ArrowRight, Shield, Leaf, Globe } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { ProfileRow } from '../types';
 
@@ -67,19 +67,19 @@ export default function Landing() {
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
-              icon: Smartphone,
-              title: 'Instant Sharing',
-              desc: 'Share your card via NFC tap, QR code, or a simple link. No app required for recipients.',
+              icon: Shield,
+              title: 'Data Security',
+              desc: 'Your personal data stays yours. No centralized platform sharing, no data selling. Your profile, your control. Secure Supabase infrastructure with row-level encryption.',
             },
             {
-              icon: Smartphone,
-              title: 'Always Updated',
-              desc: 'Change your info once and it updates everywhere. No more outdated cards in circulation.',
+              icon: Leaf,
+              title: 'Eco-Friendly',
+              desc: 'Handcrafted from sustainable walnut wood — fully biodegradable. No more printing boxes of paper cards that end up in landfill. One card, zero waste, forever.',
             },
             {
-              icon: Zap,
-              title: 'Lifetime Free Updates',
-              desc: 'Edit your name, title, company, phone, or social links anytime — instantly reflected. No fees, no reprints, ever. Your card evolves with your career.',
+              icon: Globe,
+              title: 'Lifetime Use · Free Global Shipping',
+              desc: 'One-time purchase. Free worldwide delivery. Lifetime free data management — update your info anytime, anywhere. No subscription, no hidden fees.',
             },
           ].map((f) => (
             <div

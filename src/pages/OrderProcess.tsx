@@ -195,6 +195,35 @@ export default function OrderProcess() {
             </div>
           </div>
 
+          {/* Why Tapdex — Three Pillars */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold text-white text-center mb-12">Why Tapdex</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: 'Data Security',
+                  desc: 'Your personal data stays yours. No centralized platform sharing, no data selling. Your profile, your control — powered by secure Supabase infrastructure.',
+                },
+                {
+                  title: 'Eco-Friendly',
+                  desc: 'Handcrafted from sustainable walnut wood — fully biodegradable. No more printing boxes of paper cards that end up in landfill. One card, zero waste, forever.',
+                },
+                {
+                  title: 'Lifetime · Free Shipping',
+                  desc: 'One-time purchase. Free worldwide delivery. Lifetime free data management — update your info anytime. No subscription, no hidden fees.',
+                },
+              ].map((pillar) => (
+                <div
+                  key={pillar.title}
+                  className="bg-gray-900/50 backdrop-blur border border-gray-800 rounded-2xl p-8 text-center hover:border-sky-500/50 transition-all"
+                >
+                  <h3 className="text-lg font-bold text-white mb-3">{pillar.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{pillar.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* CTA Section */}
           <div className="relative bg-gradient-to-r from-sky-500/20 to-cyan-500/20 border border-sky-500/50 rounded-2xl p-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
