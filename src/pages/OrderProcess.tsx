@@ -24,7 +24,7 @@ export default function OrderProcess() {
     {
       number: 4,
       title: 'Tap & Connect',
-      description: 'Receive your card and start sharing instantly. Simply tap to connect. Your contacts get your info immediately with NFC technology.',
+      description: 'Receive your card and start sharing instantly. Tap to share your profile — and update it anytime. New job? New number? Log in, edit, done. Lifetime free.',
       icon: Smartphone,
     },
   ];
@@ -165,7 +165,11 @@ export default function OrderProcess() {
                 },
                 {
                   q: 'What information can I include?',
-                  a: 'Add your name, title, phone, email, social media, website, and more. Everything is configurable.',
+                  a: 'Add your name, title, phone, email, social media, website, and more. Update all of it anytime for free — lifetime data management included.',
+                },
+                {
+                  q: 'Can I update my info after receiving the card?',
+                  a: 'Yes — and it\'s free forever! Log into your dashboard anytime to change your details. The NFC card always links to your latest profile. No reprints, no fees.',
                 },
                 {
                   q: 'Is shipping really free?',
@@ -194,8 +198,11 @@ export default function OrderProcess() {
           {/* CTA Section */}
           <div className="relative bg-gradient-to-r from-sky-500/20 to-cyan-500/20 border border-sky-500/50 rounded-2xl p-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
-            <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-              Join thousands of professionals already using Tapdex to connect instantly and make lasting impressions.
+            <p className="text-gray-400 mb-4 max-w-xl mx-auto">
+              Join professionals using Tapdex to connect instantly — with <span className="text-sky-400 font-semibold">lifetime free data management</span>.
+            </p>
+            <p className="text-gray-500 text-sm mb-8 max-w-xl mx-auto">
+              Change jobs? New phone number? Update your profile anytime, anywhere. No reprint fees. No expiry. Forever.
             </p>
             <Link
               to="/login"

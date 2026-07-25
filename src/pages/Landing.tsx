@@ -43,7 +43,7 @@ export default function Landing() {
             <span className="text-sky-400">Tap into the future.</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-            NFC digital business cards that work everywhere. Share your contact with a single tap. No app required. Professional identity, always in reach.
+            NFC digital business cards with <span className="text-sky-400 font-semibold">lifetime free data management</span>. Update your info anytime — job change, new phone, new company — no reprint needed. One card, always current.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
@@ -78,8 +78,8 @@ export default function Landing() {
             },
             {
               icon: Zap,
-              title: 'Professional Design',
-              desc: 'Choose from beautiful themes and accent colors. Make a lasting first impression.',
+              title: 'Lifetime Free Updates',
+              desc: 'Edit your name, title, company, phone, or social links anytime — instantly reflected. No fees, no reprints, ever. Your card evolves with your career.',
             },
           ].map((f) => (
             <div
