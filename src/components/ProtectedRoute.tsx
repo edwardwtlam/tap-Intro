@@ -10,10 +10,9 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
     return (
       <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center gap-4">
         <div className="flex flex-col items-center gap-3">
-          <img src="/tapdex-logo.svg" alt="Tapdex Logo" className="w-20 h-20 object-contain" />
+          <img src="/tapdex-logo.svg" alt="Tapdex" className="w-24 h-24 object-contain" />
           <Loader2 size={32} className="text-sky-400 animate-spin" />
         </div>
-        <p className="text-gray-400 text-sm">Tapdex</p>
       </div>
     );
   }

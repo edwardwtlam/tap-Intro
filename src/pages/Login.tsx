@@ -46,8 +46,7 @@ export default function Login() {
       <div className="relative w-full max-w-sm">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <img src="/tapdex-logo.svg" alt="Tapdex Logo" className="w-14 h-14 object-contain" />
-            <span className="text-xl font-bold text-white">Tapdex</span>
+            <img src="/tapdex-logo.svg" alt="Tapdex" className="w-20 h-20 object-contain" />
           </Link>
           <p className="text-gray-400 text-sm">Sign in to manage your NFC card</p>
         </div>
