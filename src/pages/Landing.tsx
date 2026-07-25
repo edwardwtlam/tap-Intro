@@ -27,7 +27,7 @@ export default function Landing() {
         <div className="relative max-w-5xl mx-auto px-4 pt-20 pb-24 text-center">
           <nav className="flex items-center justify-between mb-20">
             <div className="flex items-center gap-3">
-              <img src="/tapdex-logo.svg" alt="Tapdex" className="w-16 h-16 object-contain" />
+              <img src="/tapdex-logo.svg" alt="Tapdex" className="w-64 h-64 object-contain" />
             </div>
             <Link
               to="/login"
@@ -144,7 +144,7 @@ export default function Landing() {
       <footer className="border-t border-gray-800 py-8">
         <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <img src="/tapdex-logo.svg" alt="Tapdex" className="w-10 h-10 object-contain" />
+            <img src="/tapdex-logo.svg" alt="Tapdex" className="w-40 h-40 object-contain" />
           </div>
           <p className="text-xs text-gray-500">www.tapdex.com</p>
         </div>
