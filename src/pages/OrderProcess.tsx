@@ -206,7 +206,7 @@ export default function OrderProcess() {
                 },
                 {
                   title: 'Eco-Friendly',
-                  desc: 'Handcrafted from sustainable walnut wood — fully biodegradable. No more printing boxes of paper cards that end up in landfill. One card, zero waste, forever.',
+                  desc: 'Crafted from certified sustainable materials with international eco-certification. Fully biodegradable. No more printing boxes of paper cards that end up in landfill. One card, zero waste, forever.',
                 },
                 {
                   title: 'Lifetime · Free Shipping',
