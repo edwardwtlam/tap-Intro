@@ -13,11 +13,12 @@ export default function Login() {
   const location = useLocation();
   const { login, isAuthenticated } = useAuth();
 
-  const from = (location.state as { from?: string })?.from || '/dashboard';
+  const claimCode = new URLSearchParams(location.search).get('claim');
+  const redirectTo = claimCode ? `/claim/${claimCode}` : ((location.state as { from?: string })?.from || '/dashboard');
 
   // If already authenticated, redirect
   if (isAuthenticated) {
-    navigate(from, { replace: true });
+    navigate(redirectTo, { replace: true });
     return null;
   }
 
@@ -34,7 +35,7 @@ export default function Login() {
       return;
     }
 
-    navigate(from, { replace: true });
+    navigate(redirectTo, { replace: true });
   };
 
   return (
